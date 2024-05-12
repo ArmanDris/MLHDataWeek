@@ -1,0 +1,40 @@
+Check into Data Week
+Join the MLH Discord
+Fill out the Address Form
+Sign up for github student developper pack
+Github copilot primer
+Use GitHub Copilot
+Signup for CloupAMQP
+Create a LavinMQ instance
+Join LavinMQ Slack
+Producer and Consumer
+Creating Queues, echanges and bindings
+Running three consumers
+23ai Free - VirtualBox
+Sign in for LiveLabs
+Explore Operation Property Graphs
+Learn the basics of SQL
+Use SQL
+Data Grand Slam Challenge
+Build a CRM
+Password Hashing
+Explore Data
+Crud Hack
+SQL Injection Game
+Movie Database
+Time Series Analysis
+Build a Data Visualization
+Web Scraping App
+Use Weather Data
+Sticker Database
+Use a Data API
+Sports Analyst Hack
+Build with React
+Use Environmental Data
+Sentiment Analysis
+Create a Chat Bot
+Data Game
+Use Computer Vision
+Recipe Database
+Use Music Data
+Explore AI
