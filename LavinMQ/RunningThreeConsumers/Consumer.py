@@ -1,4 +1,4 @@
-import pika, os, argparse
+import pika, os, argparse, sys
 from dotenv import load_dotenv
 
 parser = argparse.ArgumentParser(description="Select which queue the consumer listens on")
@@ -13,7 +13,7 @@ if not any(vars(args).values()):
     exit(1)
 
 if args.hr:
-    queue = "hr_queue"
+    queue="hr_queue"
 elif args.marketing:
     queue = "marketing_queue"
 elif args.support:
