@@ -1,30 +1,48 @@
+<!--
+Color theme
+Dark Background Tones:
+$base03:    #002b36;
+-> $base02:    #073642;
+
+Content Tones:
+-> $base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+
+Background Tones:
+$base2:     #eee8d5;
+-> $base3:     #fdf6e3;
+
+Accent Colors:
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+-->
+
 <script>
-	export let name;
+	import Header from "./components/Header.svelte"
+	import Footer from "./components/Footer.svelte"
+	import AddBar from "./components/AddBar.svelte"
+	import ClienteleList from "./components/ClienteleList.svelte"
 </script>
 
+
+<Header />
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<AddBar />
+	<ClienteleList />
 </main>
+<Footer />
 
 <style>
 	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
+		width: 70%;
 		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
 	}
 </style>
