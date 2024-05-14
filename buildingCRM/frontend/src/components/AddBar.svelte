@@ -27,12 +27,10 @@
         		body: JSON.stringify(formData)
       		});
 
-    		if (response.ok) {
-    			const result = await response.json();
-    			console.log('Success:', result);
-    		} else {
-        		console.error('Error:', response.statusText);
+    		if (!response.ok) {
+				console.error('Error:', response.statusText);
     		}
+			
     	} catch (error) {
     		console.error('Error:', error);
     	}
