@@ -19,7 +19,7 @@
 
         try {
     		// Send the data to the backend
-    		const response = await fetch('http://localhost:3000/api/data', {
+    		const response = await fetch('http://localhost:3000/addCustomer', {
         		method: 'POST',
         		headers: {
         			'Content-Type': 'application/json'
@@ -27,9 +27,12 @@
         		body: JSON.stringify(formData)
       		});
 
-    		if (!response.ok) {
+			if (response.ok) {
+				const data = await response.json();
+				console.log(Object.values(data).join(", "));
+			} else {
 				console.error('Error:', response.statusText);
-    		}
+			}
 			
     	} catch (error) {
     		console.error('Error:', error);
