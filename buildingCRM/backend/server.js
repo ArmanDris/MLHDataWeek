@@ -35,10 +35,10 @@ app.use(express.static(path.join(__dirname, '../public')));
 async function addCustomer(req, res) {
 	const { name, email, address, leads } = req.body
 	const newDoc = new customersCollection({ name: name, email: email, address: address, leads: leads })
-	
+
 	try {
 		const savedDoc = await newDoc.save()
-		console.log(savedDoc.name + savedDoc.email + savedDoc.address + savedDoc.leads)
+		console.log("Added: " + savedDoc.name + savedDoc.email + savedDoc.address + savedDoc.leads)
 		res.status(200).json({ name, email, address, leads });
 	} catch (err) {
 		console.error(err)
@@ -57,6 +57,24 @@ async function getCustomers(req, res) {
 	}
 }
 app.get('/getCustomers', getCustomers);
+
+async function removeCustomer(req, res) {
+	try {
+		const { name, email, address, leads } = req.body;
+		const customer = await customersCollection.findOneAndDelete({ name, email, address, leads })
+		if (customer) {
+			console.log("Removed: " + name + email + address + leads)
+			res.status(200).send();
+		} else {
+			res.status(404).send()
+		}
+	}
+	catch (err) {
+		console.error(err);
+		res.status(500).send();
+	}
+}
+app.delete('/removeCustomer', removeCustomer);
 
 app.listen(PORT, () => {
 	console.log(`Server is running on http://localhost:${PORT}`);

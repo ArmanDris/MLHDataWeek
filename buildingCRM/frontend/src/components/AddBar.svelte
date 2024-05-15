@@ -75,6 +75,11 @@
 <style>
 	#inputCollection {
 		display: flex;
+		width: 100%;
+		border: 1px solid #073642;
+		border-radius: 1rem 1rem 0 0;
+
+
 	}
 
 	#inputCollection > * {
@@ -82,20 +87,9 @@
 		width: 100%;
 		background: inherit;
 		border: 0;
-		border-top: 1px solid #073642;
-		border-bottom: 1px solid #073642;
 		font-size: large;
 		padding: 14px;
-	}
-
-	#inputCollection > *:first-child {
-		border-left: 1px solid #073642;
-		border-radius: 1rem 0 0 0;
-	}
-
-	#inputCollection > *:last-child {
-		border-right: 1px solid #073642;
-		border-radius: 0 1rem 0 0;
+		text-align: center;
 	}
 
 	#inputCollection button {
