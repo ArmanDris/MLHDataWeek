@@ -4,6 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
+const sha256hash = require('./customHash')
 const mongoose = require('mongoose')
 const customersCollection = require('./models/customer')
 const usersCollection = require('./models/user')
@@ -71,7 +72,10 @@ async function login(req, res) {
 	const users = await usersCollection.find({ username: username });
 
 	for (const user of users) {
-		if (user.password === password) {
+		const hashedPass = sha256hash(password);
+		console.log(password + " hashes to \n" + hashedPass);
+		console.log("Admin's password is: " + user.password)
+		if (user.password === hashedPass) {
 			return res.status(200).send('Login successful');
 		}
 	}
