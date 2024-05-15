@@ -1,43 +1,45 @@
 <script>
     let customers = [];
+    getCustomers();
 
-    fetch('http://localhost:3000/getCustomers')
-        .then(response => response.json())
-        .then(data => {
-            customers = data;
-        })
-        .catch(error => {
-            console.error('Error fetching customers:', error);
-        });
+    function getCustomers() {
+        fetch("http://localhost:3000/getCustomers")
+            .then((response) => response.json())
+            .then((data) => {
+                customers = data;
+            })
+            .catch((error) => {
+                console.error("Error fetching customers:", error);
+            });
+    }
 
     async function removeCustomer(customer) {
         const { name, email, address, leads } = customer;
-        const response = await fetch('http://localhost:3000/removeCustomer',{
-            method: 'DELETE',
+        const response = await fetch("http://localhost:3000/removeCustomer", {
+            method: "DELETE",
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify({name, email, address, leads})
-        })
+            body: JSON.stringify({ name, email, address, leads }),
+        });
 
         if (response.ok) {
-            console.log("Removed " + name + email + address + leads)
-        }
-        else {
-            console.error('Error removing ' + name + response.status)
+            console.log("Removed " + name + email + address + leads);
+        } else {
+            console.error("Error removing " + name + response.status);
         }
 
-        customers = customers.filter(c => c !== customer);
+        customers = customers.filter((c) => c !== customer);
     }
 </script>
 
 <div id="list">
     {#each customers as customer}
         <div class="item">
-            <span class='name'>{customer.name}</span>
-            <span class='email'>{customer.email}</span>
-            <span class='address'>{customer.address}</span>
-            <span class='leads'>{customer.leads}</span>
+            <span class="name">{customer.name}</span>
+            <span class="email">{customer.email}</span>
+            <span class="address">{customer.address}</span>
+            <span class="leads">{customer.leads}</span>
             <button on:click={() => removeCustomer(customer)}><b>-</b></button>
         </div>
     {/each}
@@ -71,11 +73,11 @@
 
     #list .item button {
         display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 200px;
-		font-size: x-large;
-		cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        font-size: x-large;
+        cursor: pointer;
         background: inherit;
         border: 0;
     }

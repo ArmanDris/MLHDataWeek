@@ -1,4 +1,5 @@
 <script>
+	import { createEventDispatcher } from "svelte"
 	let name = ''
 	let email = ''
 	let address = ''
@@ -37,6 +38,8 @@
     	} catch (error) {
     		console.error('Error:', error);
     	}
+
+		dispatch('customerAdded', {name, email, address, leads});
 	}
 
 	function areAllFormsFilled() {
