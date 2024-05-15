@@ -2,7 +2,7 @@
     let customers = [];
     getCustomers();
 
-    function getCustomers() {
+    export function getCustomers() {
         fetch("http://localhost:3000/getCustomers")
             .then((response) => response.json())
             .then((data) => {
@@ -48,6 +48,7 @@
 <style>
     #list {
         width: 100%;
+        color: #268bd2;
         border: 1px solid #073642;
         border-top: 0;
         border-radius: 0 0 1rem 1rem;

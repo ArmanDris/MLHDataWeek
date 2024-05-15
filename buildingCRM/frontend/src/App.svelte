@@ -30,13 +30,19 @@ $green:     #859900;
 	import Footer from "./components/Footer.svelte"
 	import AddBar from "./components/AddBar.svelte"
 	import ClienteleList from "./components/ClienteleList.svelte"
+
+	let ClienteleListRef;
+
+	function updateClienteleList() {
+		ClienteleListRef.getCustomers();
+	}
 </script>
 
 
 <Header />
 <main>
-	<AddBar />
-	<ClienteleList />
+	<AddBar on:ping={updateClienteleList} />
+	<ClienteleList bind:this={ClienteleListRef} />
 </main>
 <Footer />
 

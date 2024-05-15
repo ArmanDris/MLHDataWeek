@@ -1,5 +1,7 @@
 <script>
 	import { createEventDispatcher } from "svelte"
+	const dispatch = createEventDispatcher();
+	
 	let name = ''
 	let email = ''
 	let address = ''
@@ -31,6 +33,7 @@
 			if (response.ok) {
 				const data = await response.json();
 				console.log(Object.values(data).join(", "));
+				dispatch('ping');
 			} else {
 				console.error('Error:', response.statusText);
 			}
@@ -38,8 +41,6 @@
     	} catch (error) {
     		console.error('Error:', error);
     	}
-
-		dispatch('customerAdded', {name, email, address, leads});
 	}
 
 	function areAllFormsFilled() {
