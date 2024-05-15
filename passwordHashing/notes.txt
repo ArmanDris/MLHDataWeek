@@ -1,0 +1,6 @@
+Needs to have:
+ - Database with customer leads and contacts, and promotions received
+ - A button to send all customers a promotion
+
+Stack:
+Svelte, Nodejs, not sure about backend

@@ -30,6 +30,7 @@ $green:     #859900;
 	import Footer from "./components/Footer.svelte";
 	import AddBar from "./components/AddBar.svelte";
 	import ClienteleList from "./components/ClienteleList.svelte";
+	import Login from "./components/Login.svelte";
 
 	// When we add a customer we want to tell ClienteleList to call getCustomers()
 	let ClienteleListRef;
@@ -37,14 +38,24 @@ $green:     #859900;
 		ClienteleListRef.getCustomers();
 	}
 
+	// Login Script
+	let loggedIn = false;
+	function handleLogin() {
+		loggedIn = true;
+	}
+
 	//
 </script>
 
 <main>
-	<Header />
-	<AddBar on:addedCustomer={updateClienteleList} />
-	<ClienteleList bind:this={ClienteleListRef} />
-	<Footer />
+	{#if loggedIn}
+		<Header />
+		<AddBar on:addedCustomer={updateClienteleList} />
+		<ClienteleList bind:this={ClienteleListRef} />
+		<Footer />
+	{:else}
+		<Login on:loginOk={handleLogin} />
+	{/if}
 </main>
 
 <style>
