@@ -32,7 +32,7 @@
 
 <div id="flexBox">
     <div id="loginBox">
-        <h1>SUPER CPM</h1>
+        <h1>SUPER CRM</h1>
         <input bind:value={username} placeholder="Username" />
         <input bind:value={password} placeholder="Password" type="password" />
         <button on:click={login}>Log In</button>
