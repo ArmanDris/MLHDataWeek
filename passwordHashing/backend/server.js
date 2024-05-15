@@ -72,13 +72,13 @@ async function login(req, res) {
 
 	for (const user of users) {
 		if (user.password === password) {
-			res.status(200).send('Login successful')
+			return res.status(200).send('Login successful');
 		}
 	}
 
-	res.status(401).send('Login failed')
+	return res.status(401).send('Login failed');
 }
-app.post('/login', login)
+app.post('/login', login);
 
 app.listen(PORT, () => {
 	console.log(`Server is running on http://localhost:${PORT}`);

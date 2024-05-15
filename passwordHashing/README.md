@@ -5,6 +5,9 @@ To compile svelt:
 cd frontend
 npm run build
 
+Username: admin
+Password: GHW123
+
 ### Prerequisites:
 Needs mongodb installed locally (https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/)
 I run mongo db with:
