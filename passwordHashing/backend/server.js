@@ -69,13 +69,15 @@ app.delete('/removeCustomer', removeCustomer);
 
 async function login(req, res) {
 	const { username, password } = req.body;
+	const hashedPass = sha256hash(password);
+
+	console.log(password + " hashes to \n" + hashedPass);
+
 	const users = await usersCollection.find({ username: username });
 
 	for (const user of users) {
-		const hashedPass = sha256hash(password);
-		console.log(password + " hashes to \n" + hashedPass);
-		console.log("Admin's password is: " + user.password)
 		if (user.password === hashedPass) {
+			console.log("Which matches " + user.username + "'s hashed password: " + user.password)
 			return res.status(200).send('Login successful');
 		}
 	}
