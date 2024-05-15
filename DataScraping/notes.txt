@@ -1,0 +1,9 @@
+What I need:
+I want to get a database of news articles. Each entry should have:
+ - Title
+ - Author
+ - Date
+ - Body of news article
+ - Image associated with article
+ - Article URL
+Update every 6 hours

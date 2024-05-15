@@ -1,17 +1,9 @@
-Check into Data Week
+Not valid challenges:
 Join the MLH Discord
-Fill out the Address Form
-Sign up for github student developper pack
-Github copilot primer
-Use GitHub Copilot
-Signup for CloupAMQP
 Create a LavinMQ instance
-Join LavinMQ Slack
 Producer and Consumer
-Creating Queues, echanges and bindings
-Running three consumers
-23ai Free - VirtualBox
-Sign in for LiveLabs
+
+Challenges in progress:
 Explore Operation Property Graphs
 Learn the basics of SQL
 Use SQL
@@ -38,3 +30,19 @@ Use Computer Vision
 Recipe Database
 Use Music Data
 Explore AI
+
+Finished but unconfirmed challenges:
+23ai Free - VirtualBox
+Sign in for LiveLabs
+
+Finished and confirmed Challenges:
+Check into Data Week
+Fill out the Address Form
+Sign up for github student developper pack
+Github copilot primer
+Use GitHub Copilot
+Signup for CloupAMQP
+Join LavinMQ Slack
+Creating Queues, echanges and bindings
+Running three consumers
+Producer and Consumer
