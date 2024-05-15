@@ -71,13 +71,13 @@ async function login(req, res) {
 	const { username, password } = req.body;
 	const hashedPass = sha256hash(password);
 
-	console.log(password + " hashes to \n" + hashedPass);
+	console.log("\n" + password + " ---hashes to--->" + hashedPass);
 
 	const users = await usersCollection.find({ username: username });
 
 	for (const user of users) {
 		if (user.password === hashedPass) {
-			console.log("Which matches " + user.username + "'s hashed password: " + user.password)
+			console.log("Which matches " + user.username + "'s hashed password: " + user.password + "\n")
 			return res.status(200).send('Login successful');
 		}
 	}
