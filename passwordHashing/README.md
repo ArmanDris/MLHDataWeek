@@ -17,3 +17,4 @@ brew services stop mongodb-community@7.0
 
 ### Attribution
 Theme is from: https://ethanschoonover.com/solarized/#features
+Icon is from: Freepik - Flaticon: Cactus icons
